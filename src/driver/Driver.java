@@ -20,18 +20,18 @@ import org.antlr.v4.runtime.Token;
 
 public class Driver {
 
-    public void writeTokens(String input_file, String output_file) throws IOException{
-        CharStream fib = CharStreams.fromFileName(input_file);
-        Little lexer = new Little(fib);
-        FileWriter fileWriter = new FileWriter(output_file);
-      PrintWriter printWriter = new PrintWriter(fileWriter);
-    while(true) {
-      Token token = lexer.nextToken();
+    public void writeTokens(String input_file, String output_file) throws IOException{      //writes tokens and types in an output file
+        CharStream mirco_code = CharStreams.fromFileName(input_file);       //gets inout file as a charstream to be read with grammar
+        Little lexer = new Little(mirco_code);      //uses lexer for purpose of grammar on the file
+        FileWriter fileWriter = new FileWriter(output_file);        //initializes output writer
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+    while(true) {       //while there is a next token in the input file
+      Token token = lexer.nextToken();      //reads token with grammar file
       if(token.getType() == Little.EOF) {
         break;
       }
       String type = "";
-        switch (token.getType()) { 
+        switch (token.getType()) {      //determines type of token that should be printed
         case 1: 
             type = "WS"; 
             break; 
@@ -57,9 +57,8 @@ public class Driver {
             type = "IDENTIFIER"; 
             break; 
         } 
-      //System.out.println("Token Type: " + type + "\n" + "Value: " + token.getText() + "\n");
 
-      printWriter.printf("Token Type: " + type + "\n" + "Value: " + token.getText() + "\n");
+      printWriter.printf("Token Type: " + type + "\n" + "Value: " + token.getText() + "\n");        //formatted print to output file
     
         
         
@@ -70,8 +69,9 @@ public class Driver {
 
     
     public static void main(String[] args) throws IOException{
+        //instances of the writetokens method with given input files, and custom output files with tokens and values
         Driver driver = new Driver();
-        driver.writeTokens("fibonacci.micro", "f.out");
+        driver.writeTokens("fibonacci.micro", "f.out");     
         driver.writeTokens("loop.micro", "l.out");
         driver.writeTokens("nested.micro", "n.out");
         driver.writeTokens("sqrt.micro", "s.out");
