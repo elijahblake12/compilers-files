@@ -10,7 +10,10 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
+import java.lang.String;
+import org.antlr.v4.runtime.atn.ParseInfo;
 
 /**
  *
@@ -70,11 +73,26 @@ public class Driver {
     
     public static void main(String[] args) throws IOException{
         //instances of the writetokens method with given input files, and custom output files with tokens and values
-        Driver driver = new Driver();
+        
+        
+        
+        /*Driver driver = new Driver();
         driver.writeTokens("fibonacci.micro", "f.out");     
         driver.writeTokens("loop.micro", "l.out");
         driver.writeTokens("nested.micro", "n.out");
-        driver.writeTokens("sqrt.micro", "s.out");
+        driver.writeTokens("sqrt.micro", "s.out");*/
+        
+        
+        CharStream  charStream = CharStreams.fromFileName("test1.micro");
+        LittleLexer littleLexer = new LittleLexer(charStream);
+        CommonTokenStream commonTokenStream = new CommonTokenStream(littleLexer);
+        LittleParser littleParser = new LittleParser(commonTokenStream);
+        //ParseInfo tree = littleParser.
+        //System.out.println(tree);
+        //ParseTree tree = littleParser.start();
+        //ParseTree parseTree = littleParser.getParent()
+        
+        
     }
     
 }
