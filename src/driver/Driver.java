@@ -13,7 +13,6 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
 import java.lang.String;
-import org.antlr.v4.runtime.atn.ParseInfo;
 
 /**
  *
@@ -69,6 +68,20 @@ public class Driver {
     printWriter.close();
     
     }
+    
+    public void parseFile(String input_file) throws IOException{
+        CharStream charStream = CharStreams.fromFileName(input_file);
+        LittleLexer littleLexer = new LittleLexer(charStream);
+        CommonTokenStream commonTokenStream = new CommonTokenStream(littleLexer);
+        LittleParser littleParser = new LittleParser(commonTokenStream);
+        int errors = littleParser.getNumberOfSyntaxErrors();
+        if(errors == 0){
+            System.out.println("Accepted");
+        }
+        else{
+            System.out.println("Not Accepted");
+        }
+    }
 
     
     public static void main(String[] args) throws IOException{
@@ -83,14 +96,29 @@ public class Driver {
         driver.writeTokens("sqrt.micro", "s.out");*/
         
         
-        CharStream  charStream = CharStreams.fromFileName("test1.micro");
-        LittleLexer littleLexer = new LittleLexer(charStream);
-        CommonTokenStream commonTokenStream = new CommonTokenStream(littleLexer);
-        LittleParser littleParser = new LittleParser(commonTokenStream);
-        //ParseInfo tree = littleParser.
-        //System.out.println(tree);
-        //ParseTree tree = littleParser.start();
-        //ParseTree parseTree = littleParser.getParent()
+        Driver driver = new Driver();
+        driver.parseFile("test1.micro");
+        driver.parseFile("test2.micro");
+        driver.parseFile("test3.micro");
+        driver.parseFile("test4.micro");
+        driver.parseFile("test5.micro");
+        driver.parseFile("test6.micro");
+        driver.parseFile("test7.micro");
+        driver.parseFile("test8.micro");
+        driver.parseFile("test9.micro");
+        driver.parseFile("test10.micro");
+        driver.parseFile("test11.micro");
+        driver.parseFile("test12.micro");
+        driver.parseFile("test13.micro");
+        driver.parseFile("test14.micro");
+        driver.parseFile("test15.micro");
+        driver.parseFile("test16.micro");
+        driver.parseFile("test17.micro");
+        driver.parseFile("test18.micro");
+        driver.parseFile("test19.micro");
+        driver.parseFile("test20.micro");
+        driver.parseFile("test21.micro");
+        
         
         
     }
