@@ -74,7 +74,23 @@ public class Driver {
         driver.writeTokens("fibonacci.micro", "f.out");     
         driver.writeTokens("loop.micro", "l.out");
         driver.writeTokens("nested.micro", "n.out");
+<<<<<<< Updated upstream
         driver.writeTokens("sqrt.micro", "s.out");
+=======
+        driver.writeTokens("sqrt.micro", "s.out");*/
+        
+        
+        CharStream  charStream = CharStreams.fromFileName("test1.micro");
+        LittleLexer littleLexer = new LittleLexer(charStream);
+        CommonTokenStream commonTokenStream = new CommonTokenStream(littleLexer);
+        LittleParser littleParser = new LittleParser(commonTokenStream);
+        //ParseInfo tree = littleParser.
+        //System.out.println(tree);
+        //ParseTree tree = littleParser.start();
+        //ParseTree parseTree = littleParser.getParent()
+        
+        littleParser.eval();
+>>>>>>> Stashed changes
     }
     
 }

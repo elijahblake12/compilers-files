@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 // Generated from Little.g4 by ANTLR 4.7.2
+=======
+// Generated from Little.g4 by ANTLR 4.5.2
+>>>>>>> Stashed changes
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -442,6 +446,18 @@ public class LittleBaseListener implements LittleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMulop(LittleParser.MulopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAssign_op(LittleParser.Assign_opContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssign_op(LittleParser.Assign_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

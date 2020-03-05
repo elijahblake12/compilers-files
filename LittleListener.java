@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 // Generated from Little.g4 by ANTLR 4.7.2
+=======
+// Generated from Little.g4 by ANTLR 4.5.2
+>>>>>>> Stashed changes
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -366,6 +370,16 @@ public interface LittleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMulop(LittleParser.MulopContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LittleParser#assign_op}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssign_op(LittleParser.Assign_opContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LittleParser#assign_op}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssign_op(LittleParser.Assign_opContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LittleParser#if_stmt}.
 	 * @param ctx the parse tree
